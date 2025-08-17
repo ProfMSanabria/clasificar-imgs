@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Teachable Machine — Demo Imagen</title>
+
+    <!-- Estilos externos -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- TensorFlow.js y Teachable Machine -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+  </head>
+  <body>
+    <div class="wrap">
+      <h1>Teachable Machine Image Model</h1>
+
+      <div class="controls">
+        <button type="button" id="startBtn">Start</button>
+        <button type="button" id="stopBtn" class="secondary">Stop</button>
+      </div>
+
+      <div id="stage">
+        <div id="webcam-container" class="panel"></div>
+        <div id="label-container" class="panel"></div>
+      </div>
+
+      <p class="hint">
+        El modelo se carga desde <code>./model/model.json</code> y
+        <code>./model/metadata.json</code>.
+      </p>
+    </div>
+
+    <!-- Lógica de la app -->
+    <script src="script.js"></script>
+  </body>
+</html>
