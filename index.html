@@ -3,34 +3,46 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Teachable Machine — Demo Imagen</title>
+    <title>Demo Teachable Machine — Imagen</title>
 
     <!-- Estilos externos -->
     <link rel="stylesheet" href="style.css" />
 
-    <!-- TensorFlow.js y Teachable Machine -->
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+    <!-- TensorFlow.js y Teachable Machine (CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.18.0/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8.4/dist/teachablemachine-image.min.js"></script>
   </head>
   <body>
-    <div class="wrap">
-      <h1>Teachable Machine - Modelo de Imágenes</h1>
+    <header class="site-header">
+      <h1>Clasificador con Teachable Machine</h1>
+      <p class="subtitle">Carga un modelo de Teachable Machine y clasifica en vivo con la cámara.</p>
+    </header>
 
-      <div class="controls">
-        <button type="button" id="startBtn">Start</button>
-        <button type="button" id="stopBtn" class="secondary">Stop</button>
-      </div>
+    <main class="container">
+      <section class="controls">
+        <button id="startBtn" class="btn primary">Iniciar cámara</button>
+        <button id="stopBtn"  class="btn">Detener</button>
+      </section>
 
-      <div id="stage">
-        <div id="webcam-container" class="panel"></div>
-        <div id="label-container" class="panel"></div>
-      </div>
+      <section class="stage">
+        <div id="webcam-container" class="webcam"></div>
+        <div id="label-container" class="labels"></div>
+      </section>
 
-      <p class="hint">
-        El modelo se carga desde <code>./model/model.json</code> y
-        <code>./model/metadata.json</code>.
-      </p>
-    </div>
+      <details class="help">
+        <summary>¿Cómo funciona?</summary>
+        <ol>
+          <li>Presiona <em>Iniciar cámara</em> y otorga permisos.</li>
+          <li>Muestra al modelo los objetos de tu conjunto de clases.</li>
+          <li>Observa en tiempo real las probabilidades por clase.</li>
+        </ol>
+        <p>El modelo se carga desde <code>./model/model.json</code> y <code>./model/metadata.json</code>.</p>
+      </details>
+    </main>
+
+    <footer class="site-footer">
+      <small>Hecho para Miñoca — Demo educativa</small>
+    </footer>
 
     <!-- Lógica de la app -->
     <script src="script.js"></script>
