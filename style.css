@@ -1,0 +1,99 @@
+:root{
+  --bg:#0b1020;
+  --panel:#131a33;
+  --ink:#e6e9f3;
+  --muted:#a9b1d6;
+  --border:#263056;
+}
+
+*{ box-sizing:border-box }
+html, body { height: 100% }
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Arial, "Noto Sans", sans-serif;
+  background: linear-gradient(180deg, #0b1020, #0f1430 40%, #0b1020);
+  color: var(--ink);
+}
+
+.wrap{
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+h1{ margin: .5rem 0 1rem }
+
+.controls{
+  display:flex;
+  gap:.75rem;
+  margin-bottom: 1rem;
+}
+
+button{
+  appearance:none;
+  border:1px solid var(--border);
+  background: var(--panel);
+  color: var(--ink);
+  padding:.6rem 1rem;
+  border-radius: 12px;
+  cursor:pointer;
+}
+button.secondary{ opacity:.85 }
+
+#stage{
+  display:grid;
+  grid-template-columns: 1fr;
+  gap:1rem;
+}
+@media (min-width: 860px){
+  #stage{ grid-template-columns: 1fr 1fr; }
+}
+
+.panel{
+  min-height: 260px;
+  border:1px solid var(--border);
+  background: var(--panel);
+  border-radius: 14px;
+  padding: .75rem;
+}
+
+#webcam-container{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+#label-container > .row{
+  display:flex;
+  align-items:center;
+  gap:.65rem;
+  margin: .35rem 0;
+}
+
+#label-container .name{
+  min-width: 8rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.progress{
+  flex:1;
+  height:10px;
+  background:#0e1530;
+  border:1px solid var(--border);
+  border-radius:999px;
+  overflow:hidden;
+}
+.progress > span{
+  display:block;
+  height:100%;
+  width:0%;
+  background: linear-gradient(90deg, #6aa7ff, #9cc2ff);
+  transition: width .15s ease;
+}
+
+.hint{
+  color: var(--muted);
+  margin-top: .75rem;
+  font-size: .95rem;
+}
